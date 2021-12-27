@@ -61,7 +61,7 @@ from yellowbrick.model_selection import LearningCurve
 
 visualizer = LearningCurve(svm, scoring='r2')
 
-visualizer.fit(np.append(X_valid, X_test, axis = 0),np.append(y_valid, y_test, axis = 0)) 
+visualizer.fit(np.append(X_valid, sc.transform(X_test), axis = 0),np.append(y_valid, y_test, axis = 0)) 
 visualizer.show()
 
 ################## ROC Curve
